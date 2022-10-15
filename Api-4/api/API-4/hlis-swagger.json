@@ -1,0 +1,95 @@
+openapi: 3.0.3
+info:
+  description: >
+    API-KEY:- Io+0YzVYyiA1mwsepKRye58abC0zeeAs26EOHBhorio=  [pass encyption
+    value] 
+     ENC-KEY:- 4tHPsPeNlzAxgJrdN1jLbFMSSl5bFzzg
+     Accept-Language: en 
+     TOKEN: 
+     [pass encyption value] 
+     
+     Terms & Conditions:- http://localhost:8084/api/v1/terms_and_condition 
+     Privacy Policy:- http://localhost:8084/api/v1/privacy_policy 
+     FAQ's:- http://localhost:8084/api/v1/faq  
+     Encryption-Decryption:- http://localhost:8084/api/enc_dec.php  
+  version: 1.0.0-oas3
+  title: Restaurent
+tags:
+  - name: Restaurent
+    description: Restaurent Application
+paths:
+  /auth/signup:
+    post:
+      tags:
+        - Restaurent
+      summary: signup
+      description: ''
+      operationId: signup
+      parameters:
+        - in: header
+          name: api-key
+          required: true
+          schema:
+            type: string
+            default: Io+0YzVYyiA1mwsepKRye58abC0zeeAs26EOHBhorio= 
+        - in: header
+          name: accept-language
+          required: true
+          schema:
+            type: string
+            enum:
+              - en
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              required:
+                - name
+                - email
+                - mobile_no
+                - login_type
+                - device_type
+                - device_token
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                mobile_no:
+                  type: string
+                login_type:
+                  type: string
+                device_type:
+                  type: string
+                device_token:
+                  type: string
+          application/json:
+            schema:
+              required:
+                - name
+                - email
+                - mobile_no
+                - login_type
+                - device_type
+                - device_token
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                mobile_no:
+                  type: string
+                login_type:
+                  type: string
+                device_type:
+                  type: string
+                device_token:
+                  type: string
+        description: signup
+        required: true
+      responses:
+        '200':
+          description: Succsss
+servers:
+  - url: http://localhost:8084/api/v1/
+  - url: https://localhost:8084/api/v1/
